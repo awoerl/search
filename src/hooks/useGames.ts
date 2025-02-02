@@ -20,13 +20,11 @@ const useGames = () => {
           page: pageParam
         }
       } 
-    ), 
+    ),
     keepPreviousData: true,
     getNextPageParam: (lastPage, allPages) => lastPage.next ? allPages.length + 1 : undefined,
     staleTime: ms('24h')
-  
    });    
-  
 }
 
 

@@ -6,11 +6,11 @@ import Listing from "../entities/Listing";
 import APIClient from "../services/api-client";
 import Genre from "../entities/Genre";
 
-const apiClient = new CSClient<Listing>('/listings');
+const apiClient = new CSClient<Listing>('/deepsearch/search');
 
 const useListings = () => useQuery({
   queryKey: CACHE_KEY_LISTINGS,
-  queryFn: () =>  apiClient.getAll({params: {c: 40}}),
+  queryFn: () =>  apiClient.getAll({params: {q:'', c: 40}}),
   staleTime: ms('24h'),
  });    
 

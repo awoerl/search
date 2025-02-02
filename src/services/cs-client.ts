@@ -7,7 +7,7 @@ export interface FetchResponse<T> {
 }
 
 const axiosInstance = axios.create({
-  baseURL: 'https://pba371.saas.contentserv.com/admin/rest/deepsearch/',
+  baseURL: 'https://pba371.saas.contentserv.com/admin/rest',
   params: {
     f: 'json'
   },  
