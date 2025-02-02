@@ -1,8 +1,6 @@
-import { Grid, Show, GridItem, Box, Flex } from "@chakra-ui/react";
+import { Grid, Show, GridItem, Box, Flex, Text } from "@chakra-ui/react";
 import ListingGrid from "../components/ListingGrid";
-import GameHeading from "../components/GameHeading";
-import GenreList from "../components/GenreList";
-import PlatformSelector from "../components/PlatformSelector";
+import ListingHeading from "../components/ListingHeading";
 import SortSelector from "../components/SortSelector";
 import AreaSelector from "../components/AreaSelector";
 
@@ -19,13 +17,11 @@ const HomePage = () => {
       }}
     >
       <Show above="lg">
-        <GridItem area="aside" paddingX="5">
-          <GenreList />
-        </GridItem>
+        <GridItem area="aside" paddingX="5"></GridItem>
       </Show>
       <GridItem area="main">
         <Box paddingLeft={2}>
-          <GameHeading></GameHeading>
+          <ListingHeading />
           <Flex marginBottom={5} marginTop={5}>
             <Box marginRight={3}>
               <AreaSelector />

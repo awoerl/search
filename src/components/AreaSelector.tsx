@@ -10,12 +10,12 @@ import {
 import usePlatforms from "../hooks/usePlatforms";
 import { BsChevronDown } from "react-icons/bs";
 import CSArea from "../hooks/useArea";
-import useGameQueryStore from "../store";
+import useSearchQueryStore from "../store";
 import useAreas from "../hooks/useAreas";
 
 const AreaSelector = () => {
-  const selectedAreaId = useGameQueryStore((s) => s.gameQuery.areaId);
-  const selectAreaId = useGameQueryStore((s) => s.setAreaId);
+  const selectedAreaId = useSearchQueryStore((s) => s.searchQuery.areaId);
+  const selectAreaId = useSearchQueryStore((s) => s.setAreaId);
   const { data, error } = useAreas();
   const selectedPlatform = CSArea.getArea(selectedAreaId || 0);
 

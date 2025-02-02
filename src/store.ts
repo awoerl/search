@@ -1,29 +1,29 @@
 import { create } from "zustand";
 
-interface GameQuery {
-  genreId?: number;
-  platformId?: number;
-  areaId?: number;
-  sortOrder?: string;
+interface SearchQuery {
   searchText?: string;
+  areaId?: number;
+  language?: string;
+  page?: number;
+  count?: number;
 }
 
-interface GameQueryStore {
-  gameQuery: GameQuery;
+interface SearchQueryStore {
+  searchQuery: SearchQuery;
   setSearchText: (searchText: string) => void;
-  setGenreId: (genreId: number) => void;
-  setPlatformId: (platformId?: number) => void;
-  setSortOrder: (sortOrder: string) => void;
-  setAreaId: (areaId?: number) => void;
+  setAreaId: (areaId: number) => void;
+  setLanguage: (language: string) => void;
+  setPage: (page: number) => void;
+  setCount: (count: number) => void;
  }
 
-const useGameQueryStore = create<GameQueryStore>(set => ({
-  gameQuery: {},
-  setSearchText: (searchText) => set(() => ({ gameQuery: {searchText: searchText}})),
-  setGenreId: (genreId) => set(store => ({gameQuery: {...store.gameQuery, genreId}})),
-  setPlatformId: (platformId) => set(store => ({gameQuery: {...store.gameQuery, platformId}})),
-  setSortOrder: (sortOrder) => set(store => ({gameQuery: {...store.gameQuery, sortOrder}})),
-  setAreaId: (areaId) => set(store => ({gameQuery: {...store.gameQuery, areaId}})),
+const useSearchQueryStore = create<SearchQueryStore>(set => ({
+  searchQuery: {},
+  setSearchText: (searchText) => set(() => ({ searchQuery: {searchText}})),
+  setAreaId: (areaId) => set(store => ({searchQuery: {...store.searchQuery, areaId}})),
+  setLanguage: (language) => set(store => ({searchQuery: {...store.searchQuery, language}})),
+  setPage: (page) => set(store => ({searchQuery: {...store.searchQuery, page}})),
+  setCount: (count) => set(store => ({searchQuery: {...store.searchQuery, count}})),
 }));    
 
-export default useGameQueryStore;
+export default useSearchQueryStore;
