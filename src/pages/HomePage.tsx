@@ -1,6 +1,7 @@
 import { Grid, Show, GridItem, Box, Flex, Text } from "@chakra-ui/react";
 import ListingGrid from "../components/ListingGrid";
 import ListingHeading from "../components/ListingHeading";
+import KeywordList from "../components/KeywordList";
 import SortSelector from "../components/SortSelector";
 import AreaSelector from "../components/AreaSelector";
 
@@ -17,7 +18,9 @@ const HomePage = () => {
       }}
     >
       <Show above="lg">
-        <GridItem area="aside" paddingX="5"></GridItem>
+        <GridItem area="aside" paddingX="5">
+          <KeywordList />
+        </GridItem>
       </Show>
       <GridItem area="main">
         <Box paddingLeft={2}>

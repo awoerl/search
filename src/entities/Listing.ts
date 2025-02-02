@@ -5,6 +5,10 @@ export default interface Listing {
   Description: string;
   ThumbUrl: string;
   ImageUrl: string;
+  Links: {
+    'Download': string;
+    'View': string;
+  };
   Area: string;
   Category: string;
   Infos: {
