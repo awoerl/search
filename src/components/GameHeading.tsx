@@ -11,7 +11,7 @@ const GameHeading = () => {
 
   const platform = Platform.getPlatform(selectedPlatformId);
 
-  const title = `${platform?.name || ""} ${genre?.name || ""} Games`;
+  const title = `${platform?.name || ""} ${genre?.name || ""} Recipies`;
 
   return (
     <Heading fontSize="5xl" as="h1">

@@ -24,7 +24,7 @@ const SearchInput = () => {
         <Input
           ref={ref}
           borderRadius={20}
-          placeholder="Search games ..."
+          placeholder="Search recipies ..."
           variant="filled"
         />
       </InputGroup>
