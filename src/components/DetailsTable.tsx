@@ -1,17 +1,8 @@
-import {
-  Link,
-  Table,
-  TableCaption,
-  TableContainer,
-  Tbody,
-  Td,
-  Tfoot,
-  Th,
-  Thead,
-  Tr,
-} from "@chakra-ui/react";
+import { Link, Table, TableContainer, Tbody, Td, Tr } from "@chakra-ui/react";
 import Details from "../entities/Details";
 import { LinkIcon } from "@chakra-ui/icons";
+import SplitList from "./SplitList";
+import TagList from "./TagList";
 
 interface Props {
   details: Details;
@@ -32,8 +23,12 @@ const DetailsTable = ({ details }: Props) => {
                   <Link target="_blank" href={info["val"]}>
                     <LinkIcon marginRight={2} /> {info["val"]}
                   </Link>
+                ) : info["key"].startsWith("Zutaten") ? (
+                  <SplitList text={info["val"]} />
+                ) : info["key"].startsWith("Tags") ? (
+                  <TagList text={info["val"]} />
                 ) : (
-                  info["val"]
+                  <div dangerouslySetInnerHTML={{ __html: info["val"] }} />
                 )}
               </Td>
             </Tr>

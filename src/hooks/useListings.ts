@@ -16,7 +16,7 @@ const useListings = () => {
     queryFn: ({pageParam = 1}) => apiClient.getAll({
         params: {
           q: searchQuery.searchText,
-          c: 40,
+          c: 27,
           a: searchQuery.areaId,
           l: searchQuery.language,
           p: pageParam
@@ -27,7 +27,7 @@ const useListings = () => {
     getNextPageParam: (lastPage, allPages) => {
       const totalResults = lastPage.totalResults;
       const currentPage = searchQuery.page || 1;
-      const itemsPerPage = searchQuery.count || 40;
+      const itemsPerPage = searchQuery.count || 27;
       return (totalResults / itemsPerPage > currentPage) ? allPages.length + 1 : undefined;
     },
     staleTime: ms('24h')
