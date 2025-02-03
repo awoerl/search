@@ -13,8 +13,8 @@ const SortSelector = () => {
     { value: "-rating", label: "Average rating" },
   ];
 
-  const sortOrder = useSearchQueryStore((s) => s.searchQuery.sortOrder);
-  const setSortOrder = useSearchQueryStore((s) => s.setSortOrder);
+  const sortOrder = useSearchQueryStore((s) => s.searchQuery.sort);
+  const setSortOrder = useSearchQueryStore((s) => s.setSort);
 
   const currrentSortOrder = sortOrders.find(
     (order) => order.value === sortOrder
