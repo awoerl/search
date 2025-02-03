@@ -3,31 +3,55 @@ import useListings from "../hooks/useListings";
 import ListingCard from "./ListingCard";
 import ListingCardContainer from "./ListingCardContainer";
 import ListingCardSkeleton from "./ListingCardSkeleton";
+import InfiniteScroll from "react-infinite-scroll-component";
+import React from "react";
 
 const ListingGrid = () => {
-  const { data, error, isLoading } = useListings();
+  const {
+    data,
+    error,
+    isLoading,
+    isFetchingNextPage,
+    fetchNextPage,
+    hasNextPage,
+  } = useListings();
+
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   if (error) return <Text>Error</Text>;
 
+  const fetchedListingsCount =
+    data?.pages.reduce((total, page) => total + page.items.length, 0) || 0;
+
   return (
-    <SimpleGrid
-      columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-      spacing={6}
-      padding="10px"
+    <InfiniteScroll
+      dataLength={fetchedListingsCount}
+      hasMore={!!hasNextPage}
+      next={() => fetchNextPage()}
+      loader={<Spinner />}
     >
-      {isLoading &&
-        skeletons.map((skeleton) => (
-          <ListingCardContainer key={skeleton}>
-            <ListingCardSkeleton />
-          </ListingCardContainer>
+      <SimpleGrid
+        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+        spacing={6}
+        padding="10px"
+      >
+        {isLoading &&
+          skeletons.map((skeleton) => (
+            <ListingCardContainer key={skeleton}>
+              <ListingCardSkeleton />
+            </ListingCardContainer>
+          ))}
+        {data?.pages.map((page, index) => (
+          <React.Fragment key={index}>
+            {page.items.map((listing) => (
+              <ListingCardContainer key={listing.ID}>
+                <ListingCard listing={listing} />
+              </ListingCardContainer>
+            ))}
+          </React.Fragment>
         ))}
-      {data?.items.map((listing) => (
-        <ListingCardContainer key={listing.ID}>
-          <ListingCard listing={listing} />
-        </ListingCardContainer>
-      ))}
-    </SimpleGrid>
+      </SimpleGrid>
+    </InfiniteScroll>
   );
 };
 
