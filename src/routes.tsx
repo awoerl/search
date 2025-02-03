@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import Layout from "./pages/Layout";
 import HomePage from "./pages/HomePage";
-import ListingDetailPage from "./pages/ListingDetailPage";
+import DetailPage from "./pages/DetailPage";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "listing/:id", element: <ListingDetailPage /> },
+      { path: "listing/:id", element: <DetailPage /> },
     ],
   },
 ]);

@@ -24,7 +24,7 @@ const AreaSelector = () => {
         <MenuItem onClick={() => selectAreaId()} key={0}>
           All Areas
         </MenuItem>
-        {data?.items.map((area) => (
+        {data?.items?.map((area) => (
           <MenuItem onClick={() => selectAreaId(area.id)} key={area.id}>
             {area.title}
           </MenuItem>

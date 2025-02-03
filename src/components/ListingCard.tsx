@@ -1,15 +1,8 @@
-import {
-  Card,
-  CardBody,
-  Heading,
-  HStack,
-  Image,
-  Text,
-  Link,
-} from "@chakra-ui/react";
+import { Card, CardBody, Heading, HStack, Image, Text } from "@chakra-ui/react";
 import Listing from "../entities/Listing";
 import CriticScore from "./CriticScore";
 import FeatureList from "./FeatureList";
+import { Link } from "react-router-dom";
 
 interface Props {
   listing: Listing;
@@ -17,11 +10,7 @@ interface Props {
 
 const ListingCard = ({ listing }: Props) => {
   return (
-    <Link
-      href={listing.Links.Download}
-      isExternal
-      style={{ textDecoration: "none" }}
-    >
+    <Link to={"listing/" + listing.ID}>
       <Card cursor={"pointer"}>
         <Image width="100%" height="200px" fit="cover" src={listing.ThumbUrl} />
         <CardBody>

@@ -2,7 +2,6 @@ import {
   Button,
   Heading,
   HStack,
-  Image,
   List,
   ListItem,
   Skeleton,
@@ -41,7 +40,7 @@ const KeywordList = () => {
         Keywords
       </Heading>
       <List>
-        {data?.items.map((area) => (
+        {data?.items?.map((area) => (
           <ListItem paddingY="5px" key={area.id}>
             <HStack>
               <Button
