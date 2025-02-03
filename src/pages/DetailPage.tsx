@@ -1,26 +1,17 @@
 import { Link as NavLink, useParams } from "react-router-dom";
-import { Link, DownloadIcon, LinkIcon } from "@chakra-ui/icons";
+import { Link, DownloadIcon } from "@chakra-ui/icons";
 import {
   Box,
-  GridItem,
   Heading,
-  HStack,
   Icon,
   SimpleGrid,
   Spinner,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Tr,
   Text,
-  LinkBox,
 } from "@chakra-ui/react";
 import ExpandableText from "../components/ExpandableText";
 import DetailsScreenshots from "../components/DetailsScreenshots";
 import useDetails from "../hooks/useDetails";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import { IconBase } from "react-icons";
 import DetailsTable from "../components/DetailsTable";
 
 const DetailPage = () => {
