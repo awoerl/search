@@ -16,7 +16,9 @@ const ListingCard = ({ listing }: Props) => {
         <CardBody>
           <HStack justifyContent="space-between" marginBottom={3}>
             <Text color="gray.500">{listing.Category}</Text>
-            <CriticScore score={parseFloat(listing.Infos.Sterne)} max={5} />
+            {listing.Infos.Sterne && (
+              <CriticScore score={parseFloat(listing.Infos.Sterne)} max={5} />
+            )}
           </HStack>
 
           <Heading
