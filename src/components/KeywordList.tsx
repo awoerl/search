@@ -42,18 +42,17 @@ const KeywordList = () => {
       <List>
         {data?.items?.map((area) => (
           <ListItem paddingY="5px" key={area.id}>
-            <HStack>
-              <Button
-                onClick={() => setSelectedAreaId(area.id)}
-                fontSize="lg"
-                variant="link"
-                whiteSpace="normal"
-                textAlign="left"
-                fontWeight={area.id == selectedAreaId ? "bold" : "normal"}
-              >
-                {area.title}
-              </Button>
-            </HStack>
+            <Button
+              onClick={() => setSelectedAreaId(area.id)}
+              fontSize="lg"
+              variant="link"
+              whiteSpace="normal"
+              textAlign="left"
+              justifyContent="left"
+              fontWeight={area.id == selectedAreaId ? "bold" : "normal"}
+            >
+              {area.title}
+            </Button>
           </ListItem>
         ))}
       </List>

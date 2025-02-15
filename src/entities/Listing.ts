@@ -1,6 +1,8 @@
 
 export default interface Listing {
+  SearchAreaID: number;
   ID: number;
+  Class: string;
   Label: string;
   Description: string;
   ThumbUrl: string;
@@ -11,12 +13,5 @@ export default interface Listing {
   };
   Area: string;
   Category: string;
-  Infos: {
-    'Brennwert in kcal': string;
-    Sterne: string;
-    Gesamtzeit: string;
-    Schwierigkeitsgrad: string;
-    'Rezept ID': string;
-    Tags: string;
-  };
+  Infos: { [key: string]: string };
 }

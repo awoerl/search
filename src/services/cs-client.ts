@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
+import { BASE_URL } from "../config";
 
 export interface FetchResponse<T> {
   totalResults: number;
@@ -7,12 +8,14 @@ export interface FetchResponse<T> {
 }
 
 const axiosInstance = axios.create({
-  baseURL: 'https://pba371.saas.contentserv.com/admin/rest',
+  baseURL: BASE_URL,
   params: {
-    f: 'json'
-  },  
+    f: "json",
+    ctsUser: 'admin',
+    ctsPassword: 'admin',
+  },
   timeout: 5000,
-  timeoutErrorMessage: 'Timed out',
+  timeoutErrorMessage: "Timed out",
 });
 
 class CSClient<T> {
@@ -23,15 +26,16 @@ class CSClient<T> {
   }
 
   getAll = (config?: AxiosRequestConfig) => {
-    return axiosInstance.get<FetchResponse<T>>(this.endpoint, config)
-    .then(res => res.data);
-  } 
+    return axiosInstance
+      .get<FetchResponse<T>>(this.endpoint, config)
+      .then((res) => res.data);
+  };
 
-  get = (id: number | string ) => {
-    return axiosInstance.get<T>(this.endpoint + '/' + id ).then(res => res.data);
-  }
+  get = (id: number | string) => {
+    return axiosInstance
+      .get<T>(this.endpoint + "/" + id)
+      .then((res) => res.data);
+  };
 }
 
 export default CSClient;
-
-

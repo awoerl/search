@@ -6,7 +6,7 @@ const ListingHeading = () => {
   const selectedAreaId = useSearchQueryStore((s) => s.searchQuery.areaId);
   const area = Area.getArea(selectedAreaId);
 
-  const title = `${area?.title || "Rezepte"}`;
+  const title = `${area?.title || "Search"}`;
 
   return (
     <Heading fontSize="5xl" as="h1">

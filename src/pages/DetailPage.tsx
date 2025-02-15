@@ -17,7 +17,6 @@ import DetailsTable from "../components/DetailsTable";
 const DetailPage = () => {
   const { id } = useParams();
   const { data: details, isLoading, error } = useDetails(id!, "27");
-  console.log(details);
 
   if (isLoading) return <Spinner />;
   if (error || !details) throw error;

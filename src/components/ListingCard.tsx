@@ -3,22 +3,26 @@ import Listing from "../entities/Listing";
 import CriticScore from "./CriticScore";
 import FeatureList from "./FeatureList";
 import { Link } from "react-router-dom";
+import Description from "./Description";
 
 interface Props {
   listing: Listing;
 }
 
 const ListingCard = ({ listing }: Props) => {
+
   return (
     <Link to={"listing/" + listing.ID}>
       <Card cursor={"pointer"}>
-        <Image width="100%" height="200px" fit="cover" src={listing.ThumbUrl} />
+        <Image
+          backgroundColor="#FFFFFF"
+          width="100%" height="200px"
+          fit={listing.Class == 'Mamfile' ? 'cover' : 'contain'}
+          src={listing.ThumbUrl + '&height=592&width=400'}
+        />
         <CardBody>
           <HStack justifyContent="space-between" marginBottom={3}>
             <Text color="gray.500">{listing.Category}</Text>
-            {listing.Infos.Sterne && (
-              <CriticScore score={parseFloat(listing.Infos.Sterne)} max={5} />
-            )}
           </HStack>
 
           <Heading
@@ -30,14 +34,10 @@ const ListingCard = ({ listing }: Props) => {
           >
             {listing.Label}
           </Heading>
+          <Description lines={3}>{listing.Description}</Description>
           <FeatureList
             lines={3}
-            features={[
-              listing.Infos["Brennwert in kcal"],
-              listing.Infos["Gesamtzeit"],
-              listing.Infos["Schwierigkeitsgrad"],
-              listing.Infos.Tags,
-            ]}
+            features={listing.Infos}
           />
         </CardBody>
       </Card>

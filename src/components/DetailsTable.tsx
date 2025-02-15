@@ -14,6 +14,7 @@ const DetailsTable = ({ details }: Props) => {
       <Table variant="simple">
         <Tbody>
           {details.infos.map((info) => (
+            info["val"] ? 
             <Tr>
               <Td paddingLeft="0" color="gray.500" verticalAlign="top">
                 {info["key"]}
@@ -32,7 +33,7 @@ const DetailsTable = ({ details }: Props) => {
                 )}
               </Td>
             </Tr>
-          ))}
+          : null))}
         </Tbody>
       </Table>
     </TableContainer>
