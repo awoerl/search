@@ -4,10 +4,26 @@ import CriticScore from "./CriticScore";
 import FeatureList from "./FeatureList";
 import { Link } from "react-router-dom";
 import Description from "./Description";
+import { IMAGE_MODE } from "../config";
 
 interface Props {
   listing: Listing;
 }
+
+const getImageFit = (listingClass: string) => {
+  switch (IMAGE_MODE) {
+   
+    case 'cover':
+      return 'cover';
+    
+    case 'contain':
+      return 'contain';
+    
+    default:
+      return (listingClass == 'Mamfile' ? 'cover' : 'contain');
+  }
+}
+
 
 const ListingCard = ({ listing }: Props) => {
 
@@ -17,8 +33,8 @@ const ListingCard = ({ listing }: Props) => {
         <Image
           backgroundColor="#FFFFFF"
           width="100%" height="200px"
-          fit={listing.Class == 'Mamfile' ? 'cover' : 'contain'}
-          src={listing.ThumbUrl + '&height=592&width=400'}
+          fit={getImageFit(listing.Class)}
+          src={listing.ThumbUrl + '&height=360&width=360'}
         />
         <CardBody>
           <HStack justifyContent="space-between" marginBottom={3}>

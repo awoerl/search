@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { BASE_URL } from "../config";
+import { BASE_URL, CS_USER_NAME, CS_PASSWORD } from "../config";
 
 export interface FetchResponse<T> {
   totalResults: number;
@@ -11,8 +11,8 @@ const axiosInstance = axios.create({
   baseURL: BASE_URL,
   params: {
     f: "json",
-    ctsUser: 'admin',
-    ctsPassword: 'admin',
+    ctsUser: CS_USER_NAME,
+    ctsPassword: CS_PASSWORD,
   },
   timeout: 5000,
   timeoutErrorMessage: "Timed out",
