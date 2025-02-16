@@ -5,6 +5,7 @@ import FeatureList from "./FeatureList";
 import { Link } from "react-router-dom";
 import Description from "./Description";
 import { IMAGE_MODE } from "../config";
+import { CSPIN } from "../config"
 
 interface Props {
   listing: Listing;
@@ -34,7 +35,7 @@ const ListingCard = ({ listing }: Props) => {
           backgroundColor="#FFFFFF"
           width="100%" height="200px"
           fit={getImageFit(listing.Class)}
-          src={listing.ThumbUrl + '&height=360&width=360'}
+          src={listing.ThumbUrl + '&height=360&width=360&CSPIN=' + CSPIN}
         />
         <CardBody>
           <HStack justifyContent="space-between" marginBottom={3}>
