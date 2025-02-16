@@ -23,4 +23,4 @@ const getCSPin = () => {
 
 export var BASE_URL = getBaseUrl();
 export var CSPIN = getCSPin();
-export var IMAGE_MODE = 'cover'; //cover, contain, auto
+export var IMAGE_MODE = 'auto'; //cover, contain, auto
