@@ -6,13 +6,10 @@ interface Props {
 }
 
 const FeatureList = ({ features, lines = 2 }: Props) => {
-  let aFeatures = [];
-  for (let key in features) {
-    aFeatures.push(features[key]);
-  }
-  return aFeatures ? (
+
+  return Object.values(features) ? (
     <Text fontSize={13} color="gray.500" noOfLines={lines}>
-      {aFeatures.join(' - ')}
+      {Object.values(features).join(' - ')}
     </Text>
   ) : null;
 };

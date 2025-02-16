@@ -9,7 +9,7 @@ const AreaSelector = () => {
   const selectedAreaId = useSearchQueryStore((s) => s.searchQuery.areaId);
   const selectAreaId = useSearchQueryStore((s) => s.setAreaId);
   const { data, error } = useAreas();
-  const selectedPlatform = CSArea.getArea(selectedAreaId || 0);
+  const selectedArea = CSArea.getArea(selectedAreaId || 0);
 
   if (error) {
     return null;
@@ -18,7 +18,7 @@ const AreaSelector = () => {
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        {selectedPlatform ? selectedPlatform.title : "Area"}
+        {selectedArea ? selectedArea.title : "Area"}
       </MenuButton>
       <MenuList>
         <MenuItem onClick={() => selectAreaId()} key={0}>
