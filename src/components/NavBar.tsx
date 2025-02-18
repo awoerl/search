@@ -1,8 +1,9 @@
 import { HStack, Image } from "@chakra-ui/react";
-import ColorModeSwitch from "./ColorModeSwitch";
+import { Link } from "react-router-dom";
 import logo from "../assets/cs.webp";
 import SearchInput from "./SearchInput";
-import { Link } from "react-router-dom";
+import ColorModeSwitch from "./ColorModeSwitch";
+import Logout from "./Logout";
 
 const NavBar = () => {
   return (
@@ -12,6 +13,7 @@ const NavBar = () => {
       </Link>
       <SearchInput />
       <ColorModeSwitch />
+      <Logout />
     </HStack>
   );
 };
