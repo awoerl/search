@@ -7,14 +7,7 @@ interface Props {
 
 const ListingCardContainer = ({ children }: Props) => {
   return (
-    <Box
-      borderRadius={10}
-      overflow="hidden"
-      _hover={{
-        transform: "scale(1.03)",
-        transition: "transform .15s ease-in",
-      }}
-    >
+    <Box borderRadius={10} overflow="hidden" className="hoverImage">
       {children}
     </Box>
   );

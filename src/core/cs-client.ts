@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { BASE_URL, CSPIN } from "../config";
+import { BASE_URL, CSPIN } from "./config";
 
 export interface FetchResponse<T> {
   totalResults: number;

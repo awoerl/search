@@ -5,6 +5,7 @@ import ListingCardContainer from "./ListingCardContainer";
 import ListingCardSkeleton from "./ListingCardSkeleton";
 import InfiniteScroll from "react-infinite-scroll-component";
 import React from "react";
+import ListingCardSkeletons from "./ListingCardSkeletons";
 
 const ListingGrid = () => {
   const {
@@ -28,19 +29,14 @@ const ListingGrid = () => {
       dataLength={fetchedListingsCount}
       hasMore={!!hasNextPage}
       next={() => fetchNextPage()}
-      loader={<Spinner />}
+      loader={<Spinner margin="2" />}
     >
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         spacing={6}
         padding="10px"
       >
-        {isLoading &&
-          skeletons.map((skeleton) => (
-            <ListingCardContainer key={skeleton}>
-              <ListingCardSkeleton />
-            </ListingCardContainer>
-          ))}
+        {isLoading && <ListingCardSkeletons />}
         {data?.pages.map((page, index) => (
           <React.Fragment key={index}>
             {page.items.map((listing) => (

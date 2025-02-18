@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { CACHE_KEY_AREAS } from "../constants";
+import { CACHE_KEY_AREAS } from "../core/constants";
 import ms from "ms";
 import Area from "../entities/Area";
-import CSClient from "../services/cs-client";
+import CSClient from "../core/cs-client";
 
 const apiClient = new CSClient<Area>("/deepsearch/areas");
 

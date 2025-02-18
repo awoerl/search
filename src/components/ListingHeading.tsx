@@ -1,6 +1,6 @@
 import { Heading } from "@chakra-ui/react";
 import Area from "../hooks/useArea";
-import useSearchQueryStore from "../store";
+import useSearchQueryStore from "../core/store";
 
 const ListingHeading = () => {
   const selectedAreaId = useSearchQueryStore((s) => s.searchQuery.areaId);

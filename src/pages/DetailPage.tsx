@@ -15,8 +15,8 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import DetailsTable from "../components/DetailsTable";
 
 const DetailPage = () => {
-  const { id } = useParams();
-  const { data: details, isLoading, error } = useDetails(id!, "27");
+  const { id, areaid } = useParams();
+  const { data: details, isLoading, error } = useDetails(id!, areaid!);
 
   if (isLoading) return <Spinner />;
   if (error || !details) throw error;

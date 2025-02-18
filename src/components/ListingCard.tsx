@@ -4,8 +4,8 @@ import CriticScore from "./CriticScore";
 import FeatureList from "./FeatureList";
 import { Link } from "react-router-dom";
 import Description from "./Description";
-import { IMAGE_MODE } from "../config";
-import { CSPIN } from "../config"
+import { IMAGE_MODE } from "../core/config";
+import { CSPIN } from "../core/config";
 
 interface Props {
   listing: Listing;
@@ -13,29 +13,27 @@ interface Props {
 
 const getImageFit = (listingClass: string) => {
   switch (IMAGE_MODE) {
-   
-    case 'cover':
-      return 'cover';
-    
-    case 'contain':
-      return 'contain';
-    
-    default:
-      return (listingClass == 'Mamfile' ? 'cover' : 'contain');
-  }
-}
+    case "cover":
+      return "cover";
 
+    case "contain":
+      return "contain";
+
+    default:
+      return listingClass == "Mamfile" ? "cover" : "contain";
+  }
+};
 
 const ListingCard = ({ listing }: Props) => {
-
   return (
-    <Link to={"listing/" + listing.ID}>
+    <Link to={"listing/" + listing.SearchAreaID + "/" + listing.ID}>
       <Card cursor={"pointer"}>
         <Image
           backgroundColor="#FFFFFF"
-          width="100%" height="200px"
+          width="100%"
+          height="200px"
           fit={getImageFit(listing.Class)}
-          src={listing.ThumbUrl + '&height=360&width=360&CSPIN=' + CSPIN}
+          src={listing.ThumbUrl + "&height=360&width=360&CSPIN=" + CSPIN}
         />
         <CardBody>
           <HStack justifyContent="space-between" marginBottom={3}>
@@ -52,10 +50,7 @@ const ListingCard = ({ listing }: Props) => {
             {listing.Label}
           </Heading>
           <Description lines={3}>{listing.Description}</Description>
-          <FeatureList
-            lines={3}
-            features={listing.Infos}
-          />
+          <FeatureList lines={3} features={listing.Infos} />
         </CardBody>
       </Card>
     </Link>

@@ -1,6 +1,6 @@
 import { Image, SimpleGrid } from "@chakra-ui/react";
 import Details from "../entities/Details";
-import { CSPIN } from "../config"
+import { CSPIN } from "../core/config";
 interface Props {
   details: Details;
 }
@@ -8,12 +8,13 @@ interface Props {
 const DetailsScreenshots = ({ details }: Props) => {
   return (
     <Image
+      className="hoverImage"
       borderRadius={10}
       width="330px"
       cursor="pointer"
       onClick={() => window.open(details.image, "_blank")}
       key={details.title}
-      src={details.image + '&CSPIN=' + CSPIN}
+      src={details.image + "&CSPIN=" + CSPIN}
     />
   );
 };
