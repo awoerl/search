@@ -6,7 +6,7 @@ import DetailPage from "../pages/DetailPage";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: location.pathname,
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [

@@ -42,10 +42,7 @@ const DetailsTable = ({ details }: Props) => {
                     cursor="pointer"
                     onClick={() =>
                       window.open(
-                        BASE_URL +
-                          "../../" +
-                          image +
-                          "&width=0&height=0",
+                        BASE_URL + "../../" + image + "&width=0&height=0",
                         "_blank"
                       )
                     }

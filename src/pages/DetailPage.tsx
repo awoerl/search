@@ -43,7 +43,7 @@ const DetailPage = () => {
             {details.subtitle}
           </Heading>
           <Heading marginBottom={4}>
-            <NavLink to="/">
+            <NavLink to="..">
               <Icon marginBottom={-1} marginLeft={-1} as={IoMdArrowRoundBack} />{" "}
               {details.title}
             </NavLink>
