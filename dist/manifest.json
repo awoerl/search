@@ -1,0 +1,25 @@
+{
+  "index.css": {
+    "file": "assets/index-aa3b7816.css",
+    "src": "index.css"
+  },
+  "index.html": {
+    "assets": [
+      "assets/cs-cdcca57c.webp"
+    ],
+    "css": [
+      "assets/index-aa3b7816.css"
+    ],
+    "file": "assets/index-9997bb58.js",
+    "isEntry": true,
+    "src": "index.html"
+  },
+  "src/assets/cs.webp": {
+    "file": "assets/cs-cdcca57c.webp",
+    "src": "src/assets/cs.webp"
+  },
+  "src/assets/favicon.png": {
+    "file": "assets/favicon-36cf3545.png",
+    "src": "src/assets/favicon.png"
+  }
+}
