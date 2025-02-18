@@ -11,16 +11,17 @@ const getBaseUrl = () => {
   );
 };
 
-const getCSPin = () => {
-  let CSPin = new URLSearchParams(window.location.search).get("CSPIN") || "";
+const getCSToken = () => {
+  let CSToken =
+    new URLSearchParams(window.location.search).get("CSToken") || "";
 
-  if (CSPin) {
-    localStorage.setItem("CSPIN", CSPin);
+  if (CSToken) {
+    localStorage.setItem("CSToken", CSToken);
   }
 
-  return localStorage.getItem("CSPIN") || "";
+  return localStorage.getItem("CSToken") || "";
 };
 
 export var BASE_URL = getBaseUrl();
-export var CSPIN = getCSPin();
+export var CSTOKEN = getCSToken();
 export var IMAGE_MODE = "auto"; //cover, contain, auto

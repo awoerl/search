@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { BASE_URL, CSPIN } from "./config";
+import { BASE_URL, CSTOKEN } from "./config";
 
 export interface FetchResponse<T> {
   totalResults: number;
@@ -11,7 +11,7 @@ const axiosInstance = axios.create({
   baseURL: BASE_URL,
   params: {
     f: "json",
-    CSPIN: CSPIN,
+    CSToken: CSTOKEN,
   },
   timeout: 5000,
   timeoutErrorMessage: "Timed out",

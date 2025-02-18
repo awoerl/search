@@ -18,7 +18,7 @@ const DetailPage = () => {
   const { id, areaid } = useParams();
   const { data: details, isLoading, error } = useDetails(id!, areaid!);
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <Spinner margin={2} />;
   if (error || !details) throw error;
 
   return (

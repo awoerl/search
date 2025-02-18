@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { LinkIcon } from "@chakra-ui/icons";
 
-import { CSPIN, BASE_URL } from "../core/config";
+import { BASE_URL } from "../core/config";
 import Details from "../entities/Details";
 import SplitList from "./SplitList";
 import TagList from "./TagList";
@@ -45,12 +45,11 @@ const DetailsTable = ({ details }: Props) => {
                         BASE_URL +
                           "../../" +
                           image +
-                          "&width=0&height=0&CSPIN=" +
-                          CSPIN,
+                          "&width=0&height=0",
                         "_blank"
                       )
                     }
-                    src={BASE_URL + "../../" + image + "&CSPIN=" + CSPIN}
+                    src={BASE_URL + "../../" + image}
                   />
                 ))}
               </Td>
