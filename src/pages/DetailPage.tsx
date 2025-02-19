@@ -8,11 +8,11 @@ import {
   Spinner,
   Text,
 } from "@chakra-ui/react";
-import ExpandableText from "../components/ExpandableText";
-import DetailsScreenshots from "../components/DetailsScreenshots";
+import ExpandableText from "../components/details/ExpandableText";
+import DetailsScreenshots from "../components/details/DetailsScreenshots";
 import useDetails from "../hooks/useDetails";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import DetailsTable from "../components/DetailsTable";
+import DetailsTable from "../components/details/DetailsTable";
 
 const DetailPage = () => {
   const { id, areaid } = useParams();

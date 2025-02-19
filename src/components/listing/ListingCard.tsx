@@ -1,10 +1,11 @@
 import { Card, CardBody, Heading, HStack, Image, Text } from "@chakra-ui/react";
-import Listing from "../entities/Listing";
-import FeatureList from "./FeatureList";
 import { Link } from "react-router-dom";
+
+import Listing from "../../entities/Listing";
+import FeatureList from "./FeatureList";
 import Description from "./Description";
-import { IMAGE_MODE } from "../core/config";
-import { useViewModeStore, ViewMode } from "../stores/viewstore";
+import { IMAGE_MODE } from "../../core/config";
+import { useViewModeStore } from "../../stores/viewstore";
 
 interface Props {
   listing: Listing;
@@ -29,7 +30,7 @@ const ListingCard = ({ listing }: Props) => {
 
   return (
     <Link to={"listing/" + listing.SearchAreaID + "/" + listing.ID}>
-      <Card cursor={"pointer"}>
+      <Card cursor={"pointer"} height="100%">
         <Image
           backgroundColor="#FFFFFF"
           width="100%"

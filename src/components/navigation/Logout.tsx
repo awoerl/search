@@ -1,6 +1,6 @@
 import { ImSwitch } from "react-icons/im";
-import { BASE_URL } from "../core/config";
-import usePortals from "../hooks/usePortals";
+import { BASE_URL } from "../../core/config";
+import usePortals from "../../hooks/usePortals";
 import {
   IconButton,
   Menu,
@@ -32,7 +32,7 @@ const Logout = () => {
     <Menu>
       <MenuButton
         as={IconButton}
-        aria-label="Logout or switch portal"
+        title="Logout or switch Portal"
         icon={<ImSwitch />}
         size="md"
         variant="ghost"
@@ -42,6 +42,7 @@ const Logout = () => {
       <MenuList>
         {data?.items.map((portal) => (
           <MenuItem
+            key={portal.id}
             icon={<ImArrowRight2 />}
             onClick={() => switchToPortal(portal.id)}
           >

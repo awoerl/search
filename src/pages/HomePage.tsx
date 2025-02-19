@@ -1,9 +1,10 @@
 import { Grid, Show, GridItem, Box, Flex, Text } from "@chakra-ui/react";
-import ListingGrid from "../components/ListingGrid";
-import ListingHeading from "../components/ListingHeading";
-import KeywordList from "../components/KeywordList";
-import SortSelector from "../components/SortSelector";
-import AreaSelector from "../components/AreaSelector";
+
+import ListingGrid from "../components/listing/ListingGrid";
+import ListingHeading from "../components/listing/ListingHeading";
+import KeywordList from "../components/navigation/KeywordList";
+import SortSelector from "../components/navigation/SortSelector";
+import AreaSelector from "../components/navigation/AreaSelector";
 
 const HomePage = () => {
   return (

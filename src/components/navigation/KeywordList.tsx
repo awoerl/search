@@ -7,8 +7,8 @@ import {
   Skeleton,
 } from "@chakra-ui/react";
 
-import useAreas from "../hooks/useAreas";
-import useSearchQueryStore from "../stores/querystore";
+import useAreas from "../../hooks/useAreas";
+import useSearchQueryStore from "../../stores/querystore";
 
 const KeywordList = () => {
   const { data, isLoading, error } = useAreas();

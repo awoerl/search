@@ -1,11 +1,12 @@
+import React from "react";
 import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
-import useListings from "../hooks/useListings";
+import InfiniteScroll from "react-infinite-scroll-component";
+
+import useListings from "../../hooks/useListings";
 import ListingCard from "./ListingCard";
 import ListingCardContainer from "./ListingCardContainer";
-import InfiniteScroll from "react-infinite-scroll-component";
-import React from "react";
 import ListingCardSkeletons from "./ListingCardSkeletons";
-import { useViewModeStore } from "../stores/viewstore";
+import { useViewModeStore } from "../../stores/viewstore";
 
 const ListingGrid = () => {
   const {

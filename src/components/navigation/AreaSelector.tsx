@@ -1,9 +1,9 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 
 import { BsChevronDown } from "react-icons/bs";
-import CSArea from "../hooks/useArea";
-import useSearchQueryStore from "../stores/querystore";
-import useAreas from "../hooks/useAreas";
+import CSArea from "../../hooks/useArea";
+import useSearchQueryStore from "../../stores/querystore";
+import useAreas from "../../hooks/useAreas";
 
 const AreaSelector = () => {
   const selectedAreaId = useSearchQueryStore((s) => s.searchQuery.areaId);

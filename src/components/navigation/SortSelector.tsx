@@ -1,7 +1,7 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 
 import { BsChevronDown } from "react-icons/bs";
-import useSearchQueryStore from "../stores/querystore";
+import useSearchQueryStore from "../../stores/querystore";
 
 const SortSelector = () => {
   const sortOrders = [

@@ -1,5 +1,6 @@
 import { Card, CardBody, Skeleton, SkeletonText } from "@chakra-ui/react";
-import { useViewModeStore, ViewMode } from "../stores/viewstore";
+
+import { useViewModeStore } from "../../stores/viewstore";
 
 const ListingCardSkeleton = () => {
   const { isCardMode } = useViewModeStore();

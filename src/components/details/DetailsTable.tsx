@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 import { LinkIcon } from "@chakra-ui/icons";
 
-import { BASE_URL } from "../core/config";
-import Details from "../entities/Details";
+import { BASE_URL } from "../../core/config";
+import Details from "../../entities/Details";
 import SplitList from "./SplitList";
 import TagList from "./TagList";
 

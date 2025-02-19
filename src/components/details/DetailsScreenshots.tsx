@@ -1,5 +1,5 @@
-import { Image, SimpleGrid } from "@chakra-ui/react";
-import Details from "../entities/Details";
+import { Image } from "@chakra-ui/react";
+import Details from "../../entities/Details";
 interface Props {
   details: Details;
 }

@@ -1,7 +1,8 @@
 import { IconButton } from "@chakra-ui/react";
 import { PiCardsFill } from "react-icons/pi";
 import { BsFileRichtextFill } from "react-icons/bs";
-import { useViewModeStore } from "../stores/viewstore";
+
+import { useViewModeStore } from "../../stores/viewstore";
 
 const ViewModeSwitch = () => {
   const { viewMode, toggleViewMode, isThumbMode } = useViewModeStore();

@@ -12,7 +12,7 @@ const ColorModeSwitch = () => {
       variant="ghost"
       margin={0}
       rounded="full"
-      title={colorMode}
+      title={colorMode === "dark" ? "Dark Mode" : "Day Mode"}
     >
       {colorMode === "dark" ? <MoonIcon /> : <SunIcon />}
     </IconButton>
