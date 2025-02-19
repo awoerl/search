@@ -4,6 +4,7 @@ import logo from "../assets/icon.png";
 import SearchInput from "./SearchInput";
 import ColorModeSwitch from "./ColorModeSwitch";
 import Logout from "./Logout";
+import ViewModeSwitch from "./ViewModeSwitch";
 
 const NavBar = () => {
   return (
@@ -12,8 +13,11 @@ const NavBar = () => {
         <Image src={logo} boxSize="40px" objectFit="cover" />
       </Link>
       <SearchInput />
-      <ColorModeSwitch />
-      <Logout />
+      <HStack marginLeft={2}>
+        <ViewModeSwitch />
+        <ColorModeSwitch />
+        <Logout />
+      </HStack>
     </HStack>
   );
 };

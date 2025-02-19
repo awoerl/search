@@ -1,12 +1,60 @@
 import { ImSwitch } from "react-icons/im";
 import { BASE_URL } from "../core/config";
+import usePortals from "../hooks/usePortals";
+import {
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuItem,
+  MenuList,
+} from "@chakra-ui/react";
+
+import { ImArrowRight2 } from "react-icons/im";
 
 const logout = () => {
-  window.open(BASE_URL + "/..?login=now", "_top");
+  let targetUrl = BASE_URL + "/../login.php?action=logout";
+  if (BASE_URL.includes("saas.contentserv")) {
+    targetUrl = "//login.contentserv.com/?instancelogout=true";
+  }
+
+  window.open(targetUrl, "_top");
+};
+
+const switchToPortal = (portalID: number) => {
+  window.location.href =
+    BASE_URL + "/../../admin/portal.php?PortalPortalID=" + portalID;
 };
 
 const Logout = () => {
-  return <ImSwitch cursor="pointer" onClick={logout} title="Logout" />;
+  const { data } = usePortals();
+  return (
+    <Menu>
+      <MenuButton
+        as={IconButton}
+        aria-label="Logout or switch portal"
+        icon={<ImSwitch />}
+        size="md"
+        variant="ghost"
+        margin={0}
+        rounded="full"
+      />
+      <MenuList>
+        {data?.items.map((portal) => (
+          <MenuItem
+            icon={<ImArrowRight2 />}
+            onClick={() => switchToPortal(portal.id)}
+          >
+            {portal.title}
+          </MenuItem>
+        ))}
+        <MenuDivider title="Portals" />
+        <MenuItem icon={<ImSwitch />} onClick={logout}>
+          Logout
+        </MenuItem>
+      </MenuList>
+    </Menu>
+  );
 };
 
 export default Logout;

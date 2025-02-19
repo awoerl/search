@@ -2,10 +2,10 @@ import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
 import useListings from "../hooks/useListings";
 import ListingCard from "./ListingCard";
 import ListingCardContainer from "./ListingCardContainer";
-import ListingCardSkeleton from "./ListingCardSkeleton";
 import InfiniteScroll from "react-infinite-scroll-component";
 import React from "react";
 import ListingCardSkeletons from "./ListingCardSkeletons";
+import { useViewModeStore } from "../stores/viewstore";
 
 const ListingGrid = () => {
   const {
@@ -17,12 +17,12 @@ const ListingGrid = () => {
     hasNextPage,
   } = useListings();
 
-  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-
   if (error) return <Text>Error</Text>;
 
   const fetchedListingsCount =
     data?.pages.reduce((total, page) => total + page.items.length, 0) || 0;
+
+  const { viewMode } = useViewModeStore();
 
   return (
     <InfiniteScroll

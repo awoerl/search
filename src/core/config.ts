@@ -1,14 +1,14 @@
 const getBaseUrl = () => {
-  let BaseUrl = new URLSearchParams(window.location.search).get("url");
-
-  if (BaseUrl) {
-    localStorage.setItem("BaseUrl", BaseUrl);
+  let BaseUrl = window.location.pathname;
+  if (BaseUrl === "/") {
+    BaseUrl = "http://localhost/master/admin/rest";
+  } else {
+    BaseUrl = window.location.href
+      .replace("rest/react/", "rest/react")
+      .replace("rest/react", "rest");
   }
 
-  return (
-    localStorage.getItem("BaseUrl") ||
-    "https://pba371.saas.contentserv.com/admin/rest"
-  );
+  return BaseUrl;
 };
 
 const getCSToken = () => {

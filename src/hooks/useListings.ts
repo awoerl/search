@@ -3,7 +3,7 @@ import { CACHE_KEY_LISTINGS } from "../core/constants";
 import CSClient, { FetchResponse } from "../core/cs-client";
 import ms from "ms";
 import Listing from "../entities/Listing";
-import useSearchQueryStore from "../core/store";
+import useSearchQueryStore from "../stores/querystore";
 
 const apiClient = new CSClient<Listing>("/deepsearch/search");
 
