@@ -1,14 +1,12 @@
 const getBaseUrl = () => {
-  let BaseUrl = window.location.pathname;
-  if (BaseUrl === "/") {
-    BaseUrl = "http://localhost/master/admin/rest";
+  let path = window.location.pathname;
+  if (path === "/") {
+    return "http://localhost/master/admin/rest";
   } else {
-    BaseUrl = window.location.href
-      .replace("rest/react/", "rest/react")
-      .replace("rest/react", "rest");
+    let BaseUrl = window.location.href;
+    const pattern = "/admin/rest";
+    return BaseUrl.slice(0, BaseUrl.indexOf(pattern) + pattern.length);
   }
-
-  return BaseUrl;
 };
 
 const getCSToken = () => {

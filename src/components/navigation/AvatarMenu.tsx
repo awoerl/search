@@ -31,7 +31,7 @@ const switchToPortal = (portalID: number) => {
     BASE_URL + "/../../admin/portal.php?PortalPortalID=" + portalID;
 };
 
-const Logout = () => {
+const AvatarMenu = () => {
   const { data } = usePortals();
   const user = useUser();
 
@@ -92,4 +92,4 @@ const Logout = () => {
   );
 };
 
-export default Logout;
+export default AvatarMenu;

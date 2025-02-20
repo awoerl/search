@@ -8,10 +8,7 @@ const ViewModeSwitch = () => {
   const { viewMode, toggleViewMode, isThumbMode } = useViewModeStore();
 
   return (
-    <Tooltip
-      borderRadius={4}
-      label={isThumbMode() ? "Show Thumbs" : "Show Cards"}
-    >
+    <Tooltip borderRadius={4} label={isThumbMode() ? "Thumbs" : "Cards"}>
       <IconButton
         onClick={toggleViewMode}
         aria-label="View Mode"

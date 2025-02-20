@@ -2,6 +2,9 @@
   "folders": [
     {
       "path": "."
+    },
+    {
+      "path": "../../../../../../Applications/CONTENTSERV/htdocs/master/BSLive/modules/alani/plugins/react/tasks"
     }
   ]
 }

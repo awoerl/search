@@ -2,7 +2,7 @@ import { HStack, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/icon.png";
-import Logout from "./Logout";
+import AvatarMenu from "./AvatarMenu";
 import SearchInput from "./SearchInput";
 import ColorModeSwitch from "./ColorModeSwitch";
 import ViewModeSwitch from "./ViewModeSwitch";
@@ -17,7 +17,7 @@ const NavBar = () => {
       <HStack marginLeft={2}>
         <ViewModeSwitch />
         <ColorModeSwitch />
-        <Logout />
+        <AvatarMenu />
       </HStack>
     </HStack>
   );

@@ -4,7 +4,7 @@ import ms from "ms";
 import CSClient from "../core/cs-client";
 import Portal from "../entities/Portal";
 
-const apiClient = new CSClient<Portal>("/react/portals");
+const apiClient = new CSClient<Portal>("/search/portals");
 
 const usePortals = () =>
   useQuery({

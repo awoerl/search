@@ -6,8 +6,6 @@ export default defineConfig({
   base: "",
   build: {
     manifest: true,
-    outDir:
-      "/Applications/CONTENTSERV/htdocs/master/BSLive/modules/deepsearch/react/",
     emptyOutDir: true,
   },
 });
