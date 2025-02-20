@@ -1,16 +1,21 @@
-import { ImSwitch } from "react-icons/im";
-import { BASE_URL } from "../../core/config";
-import usePortals from "../../hooks/usePortals";
 import {
-  IconButton,
+  Avatar,
+  Box,
+  Button,
   Menu,
   MenuButton,
   MenuDivider,
   MenuItem,
   MenuList,
+  Tooltip,
 } from "@chakra-ui/react";
 
+import { ImSwitch } from "react-icons/im";
 import { ImArrowRight2 } from "react-icons/im";
+
+import { BASE_URL } from "../../core/config";
+import usePortals from "../../hooks/usePortals";
+import useUser from "../../hooks/useUser";
 
 const logout = () => {
   let targetUrl = BASE_URL + "/../login.php?action=logout";
@@ -28,17 +33,46 @@ const switchToPortal = (portalID: number) => {
 
 const Logout = () => {
   const { data } = usePortals();
+  const user = useUser();
+
   return (
     <Menu>
-      <MenuButton
-        as={IconButton}
-        title="Logout or switch Portal"
-        icon={<ImSwitch />}
-        size="md"
-        variant="ghost"
-        margin={0}
-        rounded="full"
-      />
+      <Tooltip
+        borderRadius={4}
+        label={
+          <Box
+            dangerouslySetInnerHTML={{
+              __html:
+                "User: " +
+                user?.LongName +
+                "<br />" +
+                "Project: " +
+                user?.Project,
+            }}
+          />
+        }
+      >
+        <MenuButton
+          as={Button}
+          variant="ghost"
+          margin={0}
+          p={0}
+          rounded="full"
+          borderRadius="full"
+          size="md"
+        >
+          <Avatar
+            size="sm"
+            title={user?.Name}
+            src={user?.Image}
+            name={user?.LongName}
+            variant="solid"
+            borderColor="gray.200"
+            borderWidth="2px"
+          />
+        </MenuButton>
+      </Tooltip>
+
       <MenuList>
         {data?.items.map((portal) => (
           <MenuItem

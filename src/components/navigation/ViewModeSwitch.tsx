@@ -1,4 +1,4 @@
-import { IconButton } from "@chakra-ui/react";
+import { IconButton, Tooltip } from "@chakra-ui/react";
 import { PiCardsFill } from "react-icons/pi";
 import { BsFileRichtextFill } from "react-icons/bs";
 
@@ -8,17 +8,21 @@ const ViewModeSwitch = () => {
   const { viewMode, toggleViewMode, isThumbMode } = useViewModeStore();
 
   return (
-    <IconButton
-      onClick={toggleViewMode}
-      aria-label="View Mode"
-      size="md"
-      variant="ghost"
-      margin={0}
-      rounded="full"
-      title={isThumbMode() ? "Show Thumbs" : "Show Cards"}
+    <Tooltip
+      borderRadius={4}
+      label={isThumbMode() ? "Show Thumbs" : "Show Cards"}
     >
-      {viewMode === "thumb" ? <PiCardsFill /> : <BsFileRichtextFill />}
-    </IconButton>
+      <IconButton
+        onClick={toggleViewMode}
+        aria-label="View Mode"
+        size="md"
+        variant="ghost"
+        margin={0}
+        rounded="full"
+      >
+        {viewMode === "thumb" ? <PiCardsFill /> : <BsFileRichtextFill />}
+      </IconButton>
+    </Tooltip>
   );
 };
 

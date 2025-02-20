@@ -1,4 +1,3 @@
-
 export default interface Listing {
   SearchAreaID: number;
   ID: number;
@@ -7,9 +6,10 @@ export default interface Listing {
   Description: string;
   ThumbUrl: string;
   ImageUrl: string;
+  Url: string;
   Links: {
-    'Download': string;
-    'View': string;
+    Download: string;
+    View: string;
   };
   Area: string;
   Category: string;

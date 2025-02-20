@@ -1,21 +1,25 @@
-import { IconButton, useColorMode } from "@chakra-ui/react";
+import { Text, IconButton, Tooltip, useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const ColorModeSwitch = () => {
   const { toggleColorMode, colorMode } = useColorMode();
 
   return (
-    <IconButton
-      onClick={toggleColorMode}
-      aria-label="Color Mode"
-      size="md"
-      variant="ghost"
-      margin={0}
-      rounded="full"
-      title={colorMode === "dark" ? "Dark Mode" : "Day Mode"}
+    <Tooltip
+      label={colorMode === "dark" ? "Dark Mode" : "Day Mode"}
+      borderRadius={4}
     >
-      {colorMode === "dark" ? <MoonIcon /> : <SunIcon />}
-    </IconButton>
+      <IconButton
+        onClick={toggleColorMode}
+        aria-label="Color Mode"
+        size="md"
+        variant="ghost"
+        margin={0}
+        rounded="full"
+      >
+        {colorMode === "dark" ? <MoonIcon /> : <SunIcon />}
+      </IconButton>
+    </Tooltip>
   );
 };
 

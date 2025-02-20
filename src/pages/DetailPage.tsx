@@ -1,5 +1,6 @@
 import { Link as NavLink, useParams } from "react-router-dom";
 import { Link, DownloadIcon } from "@chakra-ui/icons";
+import { IoMdArrowRoundBack } from "react-icons/io";
 import {
   Box,
   Heading,
@@ -8,11 +9,12 @@ import {
   Spinner,
   Text,
 } from "@chakra-ui/react";
-import ExpandableText from "../components/details/ExpandableText";
+
 import DetailsScreenshots from "../components/details/DetailsScreenshots";
-import useDetails from "../hooks/useDetails";
-import { IoMdArrowRoundBack } from "react-icons/io";
 import DetailsTable from "../components/details/DetailsTable";
+import ExpandableText from "../components/details/ExpandableText";
+
+import useDetails from "../hooks/useDetails";
 
 const DetailPage = () => {
   const { id, areaid } = useParams();
